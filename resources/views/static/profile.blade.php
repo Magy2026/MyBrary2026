@@ -1,7 +1,13 @@
-@extends('layouts/main')
+@extends('layouts.main')
+
 @section('header-title')
-Profile
+My profile
 @endsection
 @section('content')
-log in
+<div class="main-continer">
+  <div class="main-bloc">
+
+
+  </div>
+</div>
 @endsection

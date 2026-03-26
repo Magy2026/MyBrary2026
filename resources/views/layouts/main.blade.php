@@ -13,14 +13,16 @@
     <div class="logo">MyBrary</div>
     <nav>
         <ul class="navbar">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">Writers</a></li>
-            <li><a href="#">Write</a></li>
-            <li><a href="#">Read</a></li> 
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
+            <li><a href="{{route('home')}}">Home</a></li>
+            <li><a href="{{route('books')}}">Books</a></li>
+            <li><a href="{{route('writers')}}">Writers</a></li>
+            <li><a href="{{route('write')}}">Write</a></li>
+            <li><a href="{{route('read')}}">Read</a></li> 
+            <li><a href="{{route('about')}}">About</a></li>
+            <li><a href="{{route('profile')}}">My Profile</a></li>
+            <li><a href="{{route('login')}}">Log in</a></li>
+            <li><a href="{{route('register')}}">Register</a></li>
+         </ul>
     </nav>
 </header>
 @yield('content')
