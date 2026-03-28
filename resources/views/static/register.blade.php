@@ -3,26 +3,26 @@
 Register
 @endsection
 @section('content')
-<div class="main-conteiner">
-  <div class="main-block">
-    <h1> Registration</h1>
-    <form action="/login" method="POST">
-        @csrf
+<div class="register-conteiner">
+    
+    <form action="{{route('register')}}" method="POST" class="register-form">
+      @csrf  
+      <h2> Registration</h2>  
         <label for="firstname">Firstname</label>
-        <input type="text" placeholder="Please write your firstname" name="name" id="firstname"><br><br>
+        <input type="text" placeholder="Please write your firstname" name="name" id="firstname" required><br><br>
 
         <label for="lastname">Lastname</label>
-        <input type="text" placeholder="Please write your lastname" name="lastname" id="lastname"><br><br>
+        <input type="text" placeholder="Please write your lastname" name="lastname" id="lastname" required><br><br>
 
-       <label for="nikcname">nikcname</label>
+       <label for="nikcname">Nikcname</label>
         <input type="text" placeholder="Please write your nikcname" name="nikcname" id="nikcname"> <br><br>
          
         <label for="email">Email</label>
-        <input type="email" placeholder="Please write your email" name="email" id="email"><br><br>
+        <input type="email" placeholder="Please write your email" name="email" id="email" required><br><br>
 
 
-        <label for="age">age</label>
-        <input type="text" placeholder="Please enter your age" name="age" id="age"> <br><br>
+        <label for="age">Age</label>
+        <input type="text" placeholder="Please enter your age" name="age" id="age" required> <br><br>
 
         <label for="gender">Gender</label>
         <select name="gender" id="gender">
@@ -37,7 +37,5 @@ Register
 
         <button type="submit">Register</button>
     </form>
-
-  </div>
 </div>
 @endsection

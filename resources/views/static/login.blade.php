@@ -3,15 +3,25 @@
 Log in
 @endsection
 @section('content')
-<form action="{{route('login')}}" method="POST">
+<div class="login-conteiner">
+    <form action="{{route('login')}}" method="POST" class="login-form">
     @csrf
- <label for="email">Email</label>
- <input type="email" placeholder="Enter your email" name="email" id="email"><br><br>
+        <h2>Log in</h2>
+<div class="form-group">
+ <input type="email" placeholder="Email" required>
+</div>
 
- <label for="password">Password</label>
-<input type="password" placeholder="Enter your password" name="password" id="password"><br><br>
+<div class="form-group">
+ <input type="password" placeholder="Password" required>
+</div>
 
-<label><input type="checkbox" name="remember">Remember me</label><br><br>
-<button type="submit">Login</button>
+<div class="form-group remember-me">
+ <input type="checkbox" id="remember">
+ <label for="remember">Remember me</label>
+</div>
+
+<button type="submit">Sign in</button>
+<p class="signup-text">Don't have an account? <a href='#'>Sign Up</a></p>
 </form>
+</div>
 @endsection

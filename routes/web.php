@@ -1,39 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BasicController;
 
-Route::get('/', function () {
-    return view('static.home');
-})->name('home');
 
-Route::get('/about', function () {
-    return view('static.about');
-})->name('about');
+Route::get('/',[BasicController::class, 'index'])->name('home');
 
-Route::get('/books', function () {
-    return view('static.books');
-})->name('books');
+Route::get('/about', [BasicController::class, 'about'])->name('about');
 
-Route::get('/profile', function () {
-    return view('static.profile');
-})->name('profile');
+Route::get('/books',[BasicController::class, 'books'])->name('books');
 
-Route::get('/read', function () {
-    return view('static.read');
-})->name('read');
-Route::get('/write', function () {
-    return view('static.write');
-})->name('write');
+Route::get('/profile',[BasicController::class, 'profile'])->name('profile');
 
-Route::get('/writers', function () {
-    return view('static.writers');
-})->name('writers');
+Route::get('/read',[BasicController::class, 'read'])->name('read');
 
-Route::get('/login', function () {
-    return view('static.login');
-})->name('login');
+Route::get('/write',[BasicController::class, 'write'])->name('write');
 
-Route::get('/register', function () {
-    return view('static.register');
-})->name('register');
+Route::get('/writers', [BasicController::class, 'writers'])->name('writers');
 
+Route::get('/login', [BasicController::class, 'login'])->name('login');
+
+Route::get('/register',[BasicController::class, 'register'])->name('register');
+
+Route::post('/register', [AuthController::class, 'register'])->name('register');
