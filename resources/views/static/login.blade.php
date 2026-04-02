@@ -4,6 +4,11 @@ Log in
 @endsection
 @section('content')
 <div class="login-conteiner">
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{session('success')}}
+    </div>
+    @endif
     <form action="{{route('login')}}" method="POST" class="login-form">
     @csrf
         <h2>Log in</h2>
@@ -21,7 +26,7 @@ Log in
 </div>
 
 <button type="submit">Sign in</button>
-<p class="signup-text">Don't have an account? <a href='#'>Sign Up</a></p>
+<p class="signup-text">Don't have an account? <a href="{{route('register')}}">Sign Up</a></p>
 </form>
 </div>
 @endsection

@@ -200,3 +200,13 @@ cursor: pointer;
     color: white;
     cursor: pointer;
 }
+.block-error{
+    background: #c23939;
+    width: 96%;
+    padding: 10px 2%;
+}
+.block-error li{
+    line-height: 170%;
+    color: white;
+    font-size: 14px;
+}

@@ -23,4 +23,11 @@ Route::get('/login', [BasicController::class, 'login'])->name('login');
 
 Route::get('/register',[BasicController::class, 'register'])->name('register');
 
-Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [BasicController::class, 'submit'])->name('register.post');
+
+Route::post('/login', [BasicController::class, 'login'])->name('login');
+Route::get('/profile', function() {
+    return view('profile');
+})->middleware('auth')->name('profile');
+
+
