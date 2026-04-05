@@ -23,8 +23,8 @@ Register
         <label for="lastname">Lastname</label>
         <input type="text" placeholder="Please write your lastname" name="lastname" id="lastname" value="{{old('lastname')}}"><br><br>
 
-       <label for="nikcname">Nikcname</label>
-        <input type="text" placeholder="Please write your nikcname" name="nikcname" id="nikcname" value="{{old('nikcname')}}"> <br><br>
+       <label for="nickname">Nickname</label>
+        <input type="text" placeholder="Please write your nickname" name="nickname" id="nickname" value="{{old('nickname')}}"> <br><br>
          
         <label for="email">Email</label>
         <input type="email" placeholder="Please write your email" name="email" id="email" value="{{old('email')}}"><br><br>

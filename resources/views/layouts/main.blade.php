@@ -14,7 +14,7 @@
                 <li><a href="{{route('read')}}">Read</a></li> 
                 <li><a href="{{route('about')}}">About</a></li>
             <li><a href="{{route('profile')}}">My Profile</a></li>
-            <li><a href="{{route('login')}}">Log in</a></li>
+            <li><a href="{{route('login.form')}}">Log in</a></li>
             <li><a href="{{route('register')}}">Register</a></li>
         </ul>
     </nav>

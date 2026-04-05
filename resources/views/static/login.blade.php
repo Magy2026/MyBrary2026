@@ -13,11 +13,13 @@ Log in
     @csrf
         <h2>Log in</h2>
 <div class="form-group">
- <input type="email" placeholder="Email" required>
+ <input type="email" name="email" placeholder="your email address">
+ @error('email')<div style="color:red">{{$message}}</div>@enderror
 </div>
 
 <div class="form-group">
- <input type="password" placeholder="Password" required>
+ <input type="password" name="password" placeholder="password">
+ @error('password')<div style="color:red">{{$message}}</div>@enderror
 </div>
 
 <div class="form-group remember-me">

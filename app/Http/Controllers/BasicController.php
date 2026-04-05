@@ -30,8 +30,10 @@ return view('static.login');
  }
   public function profile()
  {
-return view('static.profile');
+$user=Auth::user();
+return view('static.profile', compact('user'));
  }
+ 
   public function read()
  {
 return view('static.read');
@@ -55,11 +57,11 @@ return view('static.writers');
    public function submit(Request $request)
  {
 $request->validate([
-  'name'=>'required|min:2|max:15',
-  'lastname'=>'required|min:2|max:15',
-  'nikcname'=>'required|min:2|max:15',
-  'email'=>['required', 'min:5', 'max:20', 'email'],
-  'age'=>'required|integer|min:5|max:110',
+  'name'=>'required | min:2 | max:15',
+  'lastname'=>'required | min:2 | max:15',
+  'nickname'=>'required | min:2 | max:15',
+  'email'=>['required','email','unique:users,email'],
+  'age'=>'required | integer | min:5 | max:110',
   'password'=>[
   'required',
  Password::min(8)->mixedCase()->numbers()],
@@ -67,7 +69,7 @@ $request->validate([
 User::create([
   'name'=>$request->name,
   'last_name'=>$request->lastname,
-  'nikcname'=>$request->nickname,
+  'nickname'=>$request->nickname,
   'email'=>$request->email,
   'age'=>$request->age,
   'gender'=>$request->gender,
@@ -76,7 +78,7 @@ User::create([
  return redirect('login')->with('success','Registration successful!');
 }
 
-public function showlogin(Request $request)
+public function tolog(Request $request)
 {
 $credentials = $request->validate([
   'email'=>'required|email',
@@ -84,8 +86,7 @@ $credentials = $request->validate([
 ]);
 
 if (Auth::attempt($credentials)){
-  $request->session()->regenerate();
-  return redirect('/profile');
+   return redirect()->route('profile');
 }
 return back()->withErrors([
   'email'=>'Invalid email or password',
