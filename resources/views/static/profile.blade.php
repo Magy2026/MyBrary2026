@@ -6,23 +6,29 @@ My profile
 @section('content')
 <div class="profile-container">
 <h1>Welcome</h1>
-<div class="profile-image">
-  <label for="imageUpload">
+
+
+
+<div class="profile_image">
+ <form method="POST" action="{{route('profile.image')}}" enctype="multipart/form-data">
+    @csrf 
+    <input type="file" id="fileInput" name="profile_image" hidden onchange="this.form.submit()">
+      <label for="fileInput">
     @if($user->profile_image)
-    <img src="{{asset('storage/'.$user->profile_image)}}" alt="">
+    <img src="{{asset('storage/uploads/'. $user->profile_image)}}"  width="150">
   @else
   <div class="placeholder">
     <span>+</span>
   </div>
-
   @endif
-  <div class="overlay"><br><br>Add Photo</div>
+  <div class="overlay"><br><br>
+  {{$user->profile_image ? 'Change Photo' : 'Add Photo'}}
+</div>
   </label>
-  <form method="POST" action="{{route('profile')}}" enctype="multipart/form-data">
-    @csrf
-<input type="file" id="imageUpload" name="profile_image" hidden onchange="this.form.sumbit()">
-  </form>
+   </form>
   </div>
+
+  
 <h2 class="name">
   {{$user->name}} {{$user->last_name}}
 </h2>
@@ -49,4 +55,14 @@ My profile
 </div>
   </div>
 
+@endsection
+
+@section('scripts')
+<script>
+const label=document.querySelector('.profile_image label');
+const overlay=label.qureySelector('overlay');
+
+label.addEventListener('mouseover', () => overlay.style.opacity=1);
+label.addEventListener('mouseout', () => overlay.style.opacity=0);
+</script>
 @endsection

@@ -14,8 +14,16 @@
                 <li><a href="{{route('read')}}">Read</a></li> 
                 <li><a href="{{route('about')}}">About</a></li>
             <li><a href="{{route('profile')}}">My Profile</a></li>
+           @auth  
+            <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+            <form id="logout-form" method="POST" action="{{route('logout')}}" style="display:none;">
+                @csrf 
+            </form> 
+             @endauth
+             @guest
             <li><a href="{{route('login.form')}}">Log in</a></li>
             <li><a href="{{route('register')}}">Register</a></li>
+            @endguest
         </ul>
     </nav>
 </header>  
@@ -53,4 +61,5 @@
 </p>
 </footer>
 </body>
+@yield('scripts')
 </html>

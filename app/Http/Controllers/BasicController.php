@@ -92,4 +92,21 @@ return back()->withErrors([
   'email'=>'Invalid email or password',
 ]);
 }
+
+public function uploadImage(Request $request)
+{
+   $request->validate([
+'profile_image'=>'required|image|mimes:jpg, jpeg, png|max:2048'
+  ]);
+  $user=auth()->user();
+  if ($request->hasFile('profile_image')){
+    $file=$request->file('profile_image');
+    $filename=time() . '.' . $file->getClientOriginalExtension();
+    $file->storeAs('uploads', $filename, 'public');
+  $user=Auth::user();
+  $user->profile_image=$filename;
+  $user->save();
+  }
+  return back();
+}
 }
