@@ -14,6 +14,7 @@ Route::get('/books',[BasicController::class, 'books'])->name('books');
 
 Route::get('/profile',[BasicController::class, 'profile'])->name('profile')->middleware('auth');
 Route::post('/profile/image',[BasicController::class, 'uploadImage'])->name('profile.image');
+Route::post('/profile/update',[BasicController::class, 'update'])->name('profile.update');
 
 Route::get('/read',[BasicController::class, 'read'])->name('read');
 

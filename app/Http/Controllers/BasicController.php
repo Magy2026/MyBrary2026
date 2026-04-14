@@ -109,4 +109,17 @@ public function uploadImage(Request $request)
   }
   return back();
 }
+public function update(Request $request)
+{
+    $user = auth()->user();
+
+    $field = $request->field;
+
+    if (in_array($field, ['about', 'status', 'favorite_books'])) {
+        $user->$field = $request->value;
+        $user->save();
+    }
+
+    return back();
+}
 }
