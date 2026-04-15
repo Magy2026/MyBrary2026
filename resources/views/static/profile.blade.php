@@ -63,9 +63,12 @@ My profile
   {{$user->favorite_books ?? 'List your favorite books...'}} </p>
 </div>
 
-<div class="section s-box">
-  <h3>My Creative Corner</h3>
+<div class="section s-box creative-corner">
+   <a href="{{route('creative.create')}}">
+     <h3>My Creative Corner</h3>
+  </a>
   <p>Your poems, thoughts, writings will appear here...</p>
+
 </div>
   </div>
 

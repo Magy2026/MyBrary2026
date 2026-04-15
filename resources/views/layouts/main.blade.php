@@ -20,8 +20,7 @@
             <form id="logout-form" method="POST" action="{{route('logout')}}" style="display:none;">
            @csrf 
             </form> 
-             
-             @endauth
+           @endauth
              @guest
             <li><a href="{{route('login.form')}}">Log in</a></li>
             <li><a href="{{route('register')}}">Register</a></li>

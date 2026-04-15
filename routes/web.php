@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BasicController;
+use App\Http\Controllers\CreativeController;
 
 
 Route::get('/',[BasicController::class, 'index'])->name('home');
@@ -32,5 +33,23 @@ Route::post('/logout',function (){
 Route::get('/register',[BasicController::class, 'register'])->name('register');
 Route::post('/register', [BasicController::class, 'submit'])->name('register.post');
 
+Route::post('/creative', [CreativeController::class, 'store'])->name('creative.store')->middleware('auth');
+Route::get('/creative/create', [CreativeController::class, 'create'])->name('creative.create')->middleware('auth');
+
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/creative', [CreativeController::class, 'index'])
+        ->name('creative.index');
+
+    Route::get('/creative/create', [CreativeController::class, 'create'])
+        ->name('creative.create');
+
+    Route::post('/creative', [CreativeController::class, 'store'])
+        ->name('creative.store');
+
+    Route::get('/creative/{creative}', [CreativeController::class, 'show'])
+        ->name('creative.show');
+});
 
 
