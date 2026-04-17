@@ -5,9 +5,8 @@ My profile
 @endsection
 @section('content')
 <div class="profile-container">
+
 <h1>Welcome</h1>
-
-
 
 <div class="profile_image">
  <form method="POST" action="{{route('profile.image')}}" enctype="multipart/form-data">
@@ -70,12 +69,24 @@ My profile
   <p>Your poems, thoughts, writings will appear here...</p>
 
 </div>
-  </div>
 
-@endsection
+<div class="section s-box">
+    <h3>My Creations 📖</h3>
+
+    @forelse($creatives as $creative)
+        <p class="s-text"
+           onclick="openModal('creative', '{{ $creative->title }}', '{{ route('creative.show', $creative) }}')">
+            {{ $creative->title }}
+        </p>
+    @empty
+        <p class="s-text">No creations yet...</p>
+    @endforelse
+</div>
+</div>
+ 
 <div id="modal" class="modal">
   <div class="modal-content">
-    <h3>Edit</h3>
+    <h2>Edit</h2>
     <form method="POST" action="/profile/update">
      @csrf
 <textarea name="value" id="modalInput"></textarea>
@@ -87,6 +98,10 @@ My profile
   </form>
   </div>
 </div>
+@endsection
+
+
+  
 
 
 @section('scripts')

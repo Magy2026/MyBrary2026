@@ -7,6 +7,7 @@ use Illuminate\Validation\Rules\Password;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Creative;
 
 
 class BasicController extends Controller
@@ -30,7 +31,9 @@ return view('static.login');
   public function profile()
  {
 $user=Auth::user();
-return view('static.profile', compact('user'));
+$creatives = Creative::where('user_id', $user->id)->get();
+
+return view('static.profile', compact('user', 'creatives'));
  }
  
   public function read()

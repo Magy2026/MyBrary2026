@@ -14,7 +14,7 @@ My Creative Corner
 
 @foreach($creatives as $creative)
     <div style="margin-bottom: 15px;">
-        <a href="{{ route('creative.show', $creative->id) }}">
+        <a href="{{ route('creative.show', $creative) }}">
             <h3>{{ $creative->title }}</h3>
         </a>
     </div>

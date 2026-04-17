@@ -6,13 +6,23 @@ About us
 @section('content')
 <h1>{{ $creative->title }}</h1>
 
-<hr>
-
 @foreach($creative->pages as $page)
-    <div style="margin-bottom: 20px;">
+    <div class="page-line">
         <p>{{ $page->content }}</p>
     </div>
 @endforeach
+
+<a href="{{ route('creative.edit', $creative) }}">
+    Edit ✏️
+</a>
+
+<form action="{{ route('creative.destroy', $creative) }}" method="POST"
+      onsubmit="return confirm('Delete this story?')">
+    @csrf
+    @method('DELETE')
+
+    <button class="delete-btn">Delete 🗑️</button>
+</form>
 
 <a href="{{ route('creative.index') }}">⬅ Back</a>
 @endsection

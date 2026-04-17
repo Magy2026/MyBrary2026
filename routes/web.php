@@ -34,8 +34,6 @@ Route::get('/register',[BasicController::class, 'register'])->name('register');
 Route::post('/register', [BasicController::class, 'submit'])->name('register.post');
 
 Route::post('/creative', [CreativeController::class, 'store'])->name('creative.store')->middleware('auth');
-Route::get('/creative/create', [CreativeController::class, 'create'])->name('creative.create')->middleware('auth');
-
 
 Route::middleware('auth')->group(function () {
 
@@ -50,6 +48,15 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/creative/{creative}', [CreativeController::class, 'show'])
         ->name('creative.show');
+
+    Route::get('/creative/{creative}/edit', [CreativeController::class, 'edit'])
+    ->name('creative.edit');
+
+    Route::put('/creative/{creative}', [CreativeController::class, 'update'])
+    ->name('creative.update');
+
+    Route::delete('/creative/{creative}', [CreativeController::class, 'destroy'])
+    ->name('creative.destroy');
 });
 
 

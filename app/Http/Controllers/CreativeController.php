@@ -50,5 +50,30 @@ public function store(Request $request)
 
     return view('creative.show', compact('creative'));
 }
+
+
+    public function edit(Creative $creative)
+{
+      $fullContent=$creative->pages->pluck('content')->implode(" ");
+     return view('creative.edit', compact('creative', 'fullContent'));
+}
+
+
+     public function update(Request $request, Creative $creative)
+{
+      $creative->update([
+        'title' => $request->title,
+        'content' => $request->content,
+    ]);
+
+    return redirect()->route('creative.show', $creative);
+}
+
+     public function destroy(Creative $creative)
+{
+       $creative->delete();
+
+    return back();
+}
 }
 
