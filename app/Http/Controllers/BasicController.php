@@ -36,19 +36,12 @@ $creatives = Creative::where('user_id', $user->id)->get();
 return view('static.profile', compact('user', 'creatives'));
  }
  
-  public function read()
- {
-return view('static.read');
- }
   public function register()
  {
 return view('static.register');
  }
-  public function write()
- {
-return view('static.write');
- }
-  public function writers()
+ 
+ public function writers()
  {
 return view('static.writers');
  }

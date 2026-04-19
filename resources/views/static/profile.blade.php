@@ -30,6 +30,7 @@ My profile
   
 <h2 class="name">
   {{$user->name}} {{$user->last_name}}
+  ({{$user->creatives()->exists() ? 'writer' : 'reader'}})
 </h2>
 
 
@@ -72,15 +73,17 @@ My profile
 
 <div class="section s-box">
     <h3>My Creations 📖</h3>
-
-    @forelse($creatives as $creative)
-        <p class="s-text"
-           onclick="openModal('creative', '{{ $creative->title }}', '{{ route('creative.show', $creative) }}')">
-            {{ $creative->title }}
-        </p>
-    @empty
-        <p class="s-text">No creations yet...</p>
-    @endforelse
+    @if($creatives->isEmpty())
+     <p class="s-text">No creations yet...</p>
+     @else
+     <ul>
+    @foreach($creatives as $creative)
+        <li class="s-text">
+        {{ $creative->title }}
+       </li>
+    @endforeach
+</ul>
+    @endif
 </div>
 </div>
  

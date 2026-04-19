@@ -1,13 +1,18 @@
 @extends('layouts.main')
 
 @section('header-title')
-My Creative Corner
+My Creatives
 @endsection
 @section('content')
-<h1>My Creative Corner 📖</h1>
+@if(session('success'))
+    <div id="toast" class="toast">
+        {{ session('success') }}
+    </div>
+@endif
+<h1>My Creatives 📖</h1>
 
 <a href="{{ route('creative.create') }}">
-    + Write new ✍️
+    + Write new
 </a>
 
 <hr>
@@ -19,4 +24,21 @@ My Creative Corner
         </a>
     </div>
 @endforeach
+@endsection
+@section('scripts')
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let toast = document.getElementById("toast");
+
+    if (toast) {
+        setTimeout(() => {
+            toast.classList.add("show");
+        }, 100);
+
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 2000);
+    }
+});
+</script>
 @endsection

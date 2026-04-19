@@ -5,13 +5,14 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\CreativeController;
-
+use App\Http\Controllers\UserController;
 
 Route::get('/',[BasicController::class, 'index'])->name('home');
 
 Route::get('/about', [BasicController::class, 'about'])->name('about');
 
-Route::get('/books',[BasicController::class, 'books'])->name('books');
+Route::get('/creatives',[CreativeController::class, 'all'])->name('creatives.all');
+Route::get('/creatives/public/{creative}',[CreativeController::class, 'publicShow'])->name('creatives.public-show');
 
 Route::get('/profile',[BasicController::class, 'profile'])->name('profile')->middleware('auth');
 Route::post('/profile/image',[BasicController::class, 'uploadImage'])->name('profile.image');
@@ -21,7 +22,7 @@ Route::get('/read',[BasicController::class, 'read'])->name('read');
 
 Route::get('/write',[BasicController::class, 'write'])->name('write');
 
-Route::get('/writers', [BasicController::class, 'writers'])->name('writers');
+Route::get('/writers', [UserController::class, 'writers'])->name('writers');
 
 Route::get('/login', [BasicController::class, 'login'])->name('login.form');
 Route::post('/login', [BasicController::class, 'tolog'])->name('login');
@@ -60,3 +61,4 @@ Route::middleware('auth')->group(function () {
 });
 
 
+Route::get('/writers/{user}', [UserController::class, 'show'])->name('writers.show');

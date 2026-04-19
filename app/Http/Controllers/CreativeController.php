@@ -73,7 +73,21 @@ public function store(Request $request)
 {
        $creative->delete();
 
-    return back();
+    return redirect()->route('creative.index')->with('success', 'Deleted successfilly');
+}
+   public function all()
+{
+    $creatives = Creative::with('user')
+        ->orderBy('title', 'asc')
+        ->get();
+
+    return view('static.all-creatives', compact('creatives'));
+}
+   public function publicShow(Creative $creative)
+{
+    $creative->load('user','pages');
+
+    return view('creative.public-show', compact('creative'));
 }
 }
 

@@ -8,18 +8,18 @@
     <nav>
             <ul class="navbar">
                 <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="{{route('books')}}">Books</a></li>
                 <li><a href="{{route('writers')}}">Writers</a></li>
-               
-                <li><a href="{{route('read')}}">Read</a></li> 
+                  <li><a href="{{route('creatives.all')}}">All creatives</a></li>
                 <li><a href="{{route('about')}}">About</a></li>
-            <li><a href="{{route('profile')}}">My Profile</a></li>
+                <li><a href="{{route('profile')}}">My Profile</a></li>
+
            @auth  
-           <li><a href="{{route('write')}}">Write</a></li>
-            <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-            <form id="logout-form" method="POST" action="{{route('logout')}}" style="display:none;">
+                <li><a href="{{route('creative.create')}}">Write</a></li>
+                <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+            <form id="logout-form" method="POST" action="{{route('logout')}}" style="display:none;">        
            @csrf 
             </form> 
+                <li><a href="{{ route('creative.index') }}">My Creatives</a></li>
            @endauth
              @guest
             <li><a href="{{route('login.form')}}">Log in</a></li>
@@ -61,6 +61,6 @@
     <a href='#'>Instagram</a>
 </p>
 </footer>
-</body>
 @yield('scripts')
+</body>
 </html>
