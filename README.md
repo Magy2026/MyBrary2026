@@ -26,10 +26,9 @@ Mybrary is a Laravel-based web application where users can register, login, and 
 - JavaScript
 
 ---
----
-##Screenshots
-###Home Page
-https://github.com/Magy2026/MyBrary2026/blob/main/screenshots/home.png?raw=true
+## Screenshots
+### Home Page
+<img src="https://github.com/Magy2026/MyBrary2026/blob/main/screenshots/home.png?raw=true" width="600">
 
 ## 📦 Installation
 
