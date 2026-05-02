@@ -571,3 +571,41 @@ button:active {
     object-fit: cover;
     border: 2px solid #ccc;
 }
+
+.heart {
+    font-size: 30px;
+    cursor: pointer;
+    color: gray;
+    transition: 0.2s;
+}
+
+.heart.active {
+    color: red;
+}
+
+.home-container{
+    max-width: 900px;
+    margin: 10px auto;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.image-container {
+    position: relative;
+    width: 900px;
+}
+
+.image-container img {
+    width: 100%;
+    display: block;
+}
+
+.text {
+    position:initial;
+    top: 10%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -9,7 +9,7 @@
             <ul class="navbar">
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="{{route('writers')}}">Writers</a></li>
-                  <li><a href="{{route('creatives.all')}}">All creatives</a></li>
+                <li><a href="{{route('creatives.all')}}">All creatives</a></li>
                 <li><a href="{{route('about')}}">About</a></li>
                 <li><a href="{{route('profile')}}">My Profile</a></li>
 

@@ -89,5 +89,6 @@ public function store(Request $request)
 
     return view('creative.public-show', compact('creative'));
 }
+
 }
 

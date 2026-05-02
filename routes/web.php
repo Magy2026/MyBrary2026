@@ -6,6 +6,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\CreativeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RatingController;
+use App\Models\Rating;
+use App\Models\Creative;
 
 Route::get('/',[BasicController::class, 'index'])->name('home');
 
@@ -62,3 +65,8 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/writers/{user}', [UserController::class, 'show'])->name('writers.show');
+
+
+Route::post('/rate', [RatingController::class, 'store'])->name('rate.store');
+
+
