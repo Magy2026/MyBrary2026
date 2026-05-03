@@ -27,19 +27,35 @@ Mybrary is a Laravel-based web application where users can register, login, and 
 
 ---
 ## Screenshots
+
+### Home Page
 ![Home Page](screenshots/home1.png)
+
+### About Page
 ![About Page](screenshots/about1.png)
+
+### Profile Page
 ![Profile Page](screenshots/my_profile.png)
 ![Profile Page](screenshots/my_profile1.png)
 ![Profile Page](screenshots/my_profile2.png)
 ![Profile Page](screenshots/my_profile3.png)
+
+### Creatives Page
 ![Creatives Page](screenshots/creatives.png)
 ![Creatives Page](screenshots/creative.png)
 ![Creatives Page](screenshots/my_creative_corner.png)
 ![Creatives Page](screenshots/my_creatives.png)
+
+### Login Page
 ![Login Page](screenshots/login.png)
+
+### Registration Page
 ![Registration Page](screenshots/registration.png)
+
+### Writers Page
 ![Writers Page](screenshots/writers.png)
+
+### Rating Page
 ![Rating Page](screenshots/rating.png)
 
 ---
