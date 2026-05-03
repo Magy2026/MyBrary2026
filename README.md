@@ -41,6 +41,8 @@ Mybrary is a Laravel-based web application where users can register, login, and 
 ![Registration Page](screenshots/registration.png)
 ![Writers Page](screenshots/writers.png)
 ![Rating Page](screenshots/rating.png)
+
+---
 ## 📦 Installation
 
 Clone the repository:
