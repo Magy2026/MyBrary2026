@@ -28,28 +28,35 @@ Mybrary is a Laravel-based web application where users can register, login, and 
 ---
 ## Screenshots
 
-<div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:15px;">
+### Home Page
+![Home Page](screenshots/home1.png)
 
-  <img src="screenshots/home1.png" width="100%"/>
-  <img src="screenshots/about1.png" width="100%"/>
-  <img src="screenshots/my_profile.png" width="100%"/>
+### About Page
+![About Page](screenshots/about1.png)
 
-  <img src="screenshots/my_profile1.png" width="100%"/>
-  <img src="screenshots/my_profile2.png" width="100%"/>
-  <img src="screenshots/my_profile3.png" width="100%"/>
+### Profile Page
+![Profile Page](screenshots/my_profile.png)
+![Profile Page](screenshots/my_profile1.png)
+![Profile Page](screenshots/my_profile2.png)
+![Profile Page](screenshots/my_profile3.png)
 
-  <img src="screenshots/creatives.png" width="100%"/>
-  <img src="screenshots/creative.png" width="100%"/>
-  <img src="screenshots/my_creative_corner.png" width="100%"/>
+### Creatives Page
+![Creatives Page](screenshots/creatives.png)
+![Creatives Page](screenshots/creative.png)
+![Creatives Page](screenshots/my_creative_corner.png)
+![Creatives Page](screenshots/my_creatives.png)
 
-  <img src="screenshots/my_creatives.png" width="100%"/>
-  <img src="screenshots/login.png" width="100%"/>
-  <img src="screenshots/registration.png" width="100%"/>
+### Login Page
+![Login Page](screenshots/login.png)
 
-  <img src="screenshots/writers.png" width="100%"/>
-  <img src="screenshots/rating.png" width="100%"/>
+### Registration Page
+![Registration Page](screenshots/registration.png)
 
-</div>
+### Writers Page
+![Writers Page](screenshots/writers.png)
+
+### Rating Page
+![Rating Page](screenshots/rating.png)
 
 ---
 
